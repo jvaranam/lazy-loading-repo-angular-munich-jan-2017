@@ -29,9 +29,6 @@ import {AuthService} from "./auth/auth.service";
     ],
     providers:  [
         OAuthService,
-        { provide: AuthService, useClass: SimpleAuthService },
-        AuthGuard,
-        AuthLoadGuard,
         AuthChildGuard,
         LeaveComponentGuard,
         CustomPreloadingStrategy

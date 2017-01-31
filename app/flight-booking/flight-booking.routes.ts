@@ -12,7 +12,7 @@ import {ChatComponent} from "./chat/chat.component";
 
 const FLIGHT_BOOKING_ROUTES: Routes = [
     {
-        path: 'flight-booking',
+        path: '',
         component: FlightBookingComponent,
         children: [
             {

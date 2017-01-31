@@ -18,6 +18,14 @@ let APP_ROUTES: Routes = [
         component: HomeComponent
     },
     {
+        path: 'flight-booking',
+        loadChildren: './flight-booking/flight-booking.module#FlightBookingModule',
+        canLoad: [AuthLoadGuard],
+        data: {
+            preload: false
+        }
+    },
+    {
         path: 'bookings',
         component: BookingsComponent
     },
@@ -33,7 +41,9 @@ let APP_ROUTES: Routes = [
     }
 ];
 
-export let AppRouterModule = RouterModule.forRoot(APP_ROUTES);
+export let AppRouterModule =
+        RouterModule.forRoot(APP_ROUTES,
+            { preloadingStrategy: CustomPreloadingStrategy });
 
 
 

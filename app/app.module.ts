@@ -9,7 +9,9 @@ import {AppRouterModule} from "./app.routes";
 import {HomeComponent} from "./home/home.component";
 import {FlightHistoryComponent} from "./flight-history/flight-history.component";
 import {BookingsComponent} from "./bookings/bookings.component";
-import {FlightBookingModule} from "./flight-booking/flight-booking.module";
+import { CoreModule } from './core/core.module';
+import { AuthModule } from './auth/auth.module';
+// import {FlightBookingModule} from "./flight-booking/flight-booking.module";
 
 @NgModule({
     imports: [
@@ -19,7 +21,9 @@ import {FlightBookingModule} from "./flight-booking/flight-booking.module";
         ReactiveFormsModule,
         SharedModule,
         AppRouterModule,
-        FlightBookingModule
+        CoreModule,
+        AuthModule.forRoot()
+        //FlightBookingModule
     ],
     declarations: [
         AppComponent,
